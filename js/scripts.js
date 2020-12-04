@@ -79,7 +79,7 @@ function gameResult(player, site){
     }
 }
 
-//these variables and function keeps score and announce who won the game
+//these variables and function keeps score and announces who won the game
 var playerScore = 0;
 var computerScore = 0;
 function addScore(result){
@@ -101,22 +101,22 @@ function addScore(result){
 
 //function and variable below start the game
 var game = '<img src="images/computer.png" id="theCPU">'+
-'    <h1 id="exclaim"></h1>'+
+'    <h2 id="exclaim"></h2>'+
 ''+
 '    <img src="images/rock.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'rock\'), getSiteChoice())); checkForWin();">'+
 '    <img src="images/paper.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'paper\'), getSiteChoice())); checkForWin();">'+
 '    <img src="images/scissors.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'scissors\'), getSiteChoice())); checkForWin();">'+
 '    <table>'+
 '        <tr>'+
-'            <td><h1>Player Score</h1></td>'+
-'            <td><h1>Computer Score</h1></td>'+
+'            <td><h2>Player Score</h2></td>'+
+'            <td><h2>Computer Score</h2></td>'+
 '        </tr>'+
 '        <tr>'+
-'            <td><h1 id="player">0</h1></td>'+
-'            <td><h1 id="computer">0</h1></td>'+
+'            <td><h2 id="player">0</h2></td>'+
+'            <td><h2 id="computer">0</h2></td>'+
 '        </tr>'+
 '        <tr>'+
-'            <td colspan="2"><h1 id="result"></h1></td>'+
+'            <td colspan="2"><h2 id="result"></h2></td>'+
 '        </tr>'+
 '    </table>';
 	
@@ -129,6 +129,10 @@ function startGame(rounds){
 var totalRounds = 0;
 function checkForWin(){
     if(playerScore == Math.ceil(totalRounds / 2) || computerScore == Math.ceil(totalRounds / 2)){
-        document.getElementById("mainDiv").innerHTML = "Finish";
+        if(playerScore > computerScore){
+            document.getElementById("mainDiv").innerHTML = "<h2>Player WIN!</h2>";
+        }else{
+            document.getElementById("mainDiv").innerHTML = "<h2>Computer WIN!</h2>";
+        }
     }
 }
