@@ -1,0 +1,25 @@
+body{
+    background-color: lightgray;
+}
+h1{
+    text-align: center;
+}
+img.choice{
+    width: 15rem;
+    display: inline-block;
+    top: 0;
+}
+table{
+    width: auto;
+}
+img#theCPU{
+    position: absolute;
+    top: 5rem;
+    left: 70rem;
+    width: 20rem;
+}
+#exclaim{
+    position: absolute;
+    top: 10rem;
+    left: 58rem;
+}
