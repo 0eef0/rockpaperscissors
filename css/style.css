@@ -5,22 +5,33 @@ h1{
     text-align: center;
 }
 img.choice{
-    width: 15rem;
+    width: 10rem;
     display: inline-block;
     top: 0;
     border-radius: 50%;
-}
-table{
-    width: auto;
+    text-align: left;
+    border: 2px solid black;
 }
 img#theCPU{
     position: absolute;
     top: 5rem;
-    left: 70rem;
+    left: 62rem;
     width: 20rem;
+    z-index: 2;
 }
 #exclaim{
     position: absolute;
-    top: 10rem;
-    left: 58rem;
+    top: 9rem;
+    left: 71rem;
+    background-color: rgb(0,0,0,0.5);
+    color: green;
+    height: 5rem;
+}
+#mainDiv{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    background-color: rgb(100, 100, 100, 0.5);
+    text-align: center;
 }
