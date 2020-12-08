@@ -13,14 +13,14 @@ img.choice{
 }
 img#theCPU{
     position: absolute;
-    top: 5rem;
+    top: 13rem;
     left: 62rem;
     width: 20rem;
     z-index: 2;
 }
 #exclaim{
     position: absolute;
-    top: 6rem;
+    top: 14rem;
     left: 70rem;
     background-color: rgb(0,0,0,0.5);
     color: green;
@@ -39,12 +39,19 @@ img#theCPU{
     padding: 1rem;
 }
 table{
-    display: block;
-    margin-left: auto;
+    display: inline-block;
+    margin-left: 10%;
     margin-right: auto;
     width: 40%;
-    background-color: red;
+    background-color: #bbbbbb;
+    text-align: center;
 }
 tr, td{
     width: 58%;
+}
+table h2{
+    height: 0.5rem;
+}
+table#finalScore{
+    margin-left: 0;
 }

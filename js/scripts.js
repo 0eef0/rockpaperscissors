@@ -137,8 +137,8 @@ var game = '<img src="images/computer.png" id="theCPU">'+
 '    <h2 id="exclaim"></h2>'+
 ''+
 '    <img src="images/rock.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'rock\'), getSiteChoice(\'rock\'))); checkForWin();">'+
+'<br>' +
 '    <img src="images/paper.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'paper\'), getSiteChoice(\'paper\'))); checkForWin();">'+
-'    <img src="images/scissors.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'scissors\'), getSiteChoice(\'scissors\'))); checkForWin();">'+
 '    <table>'+
 '        <tr>'+
 '            <td><h2>Player Score</h2></td>'+
@@ -151,9 +151,12 @@ var game = '<img src="images/computer.png" id="theCPU">'+
 '        <tr>'+
 '            <td colspan="2"><h2 id="result"></h2></td>'+
 '        </tr>'+
-'    </table>';
+'    </table>' +
+'<br>' +
+'    <img src="images/scissors.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'scissors\'), getSiteChoice(\'scissors\'))); checkForWin();">'
+;
 
-var gameTable = '    <table>'+
+var gameTable = '    <table id="finalScore">'+
 '        <tr>'+
 '            <td><h2>Player Score</h2></td>'+
 '            <td><h2>Computer Score</h2></td>'+
@@ -170,6 +173,7 @@ var gameTable = '    <table>'+
 function startGame(rounds){
     checkDifficulty();
     totalRounds = rounds;
+    document.getElementById("mainDiv").style.textAlign = "left";
     document.getElementById("mainDiv").innerHTML = game;
 }
 
@@ -178,6 +182,7 @@ var totalRounds = 0;
 function checkForWin(){
     setTimeout(() => {  
         if(playerScore == Math.ceil(totalRounds / 2) || computerScore == Math.ceil(totalRounds / 2)){
+            document.getElementById("mainDiv").style.textAlign = "center";
             if(playerScore > computerScore){
                 document.getElementById("mainDiv").innerHTML = "<h2>Player WIN!</h2>" + gameTable;
                 document.getElementById("player").innerHTML = playerScore;
