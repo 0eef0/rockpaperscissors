@@ -55,3 +55,10 @@ table h2{
 table#finalScore{
     margin-left: 0;
 }
+button.choiceButton{
+    background-color: transparent;
+    border-color: transparent;
+}
+button:focus{
+    outline: none;
+}

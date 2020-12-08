@@ -1,6 +1,9 @@
 //This function gets the player's choice and returns it
 function makeChoice(choice){
     console.log(choice);
+    document.getElementById("rockButton").disabled = true;
+    document.getElementById("paperButton").disabled = true;
+    document.getElementById("scissorButton").disabled = true;
     return choice;
 }
 //This function randomly generates a number and returns the corresponding choice
@@ -130,15 +133,16 @@ function addScore(result){
         case "tie":
             document.getElementById("result").innerHTML = "Tie!";
     }
+
 }
 
 //function and variable below start the game
 var game = '<img src="images/computer.png" id="theCPU">'+
 '    <h2 id="exclaim"></h2>'+
 ''+
-'    <img src="images/rock.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'rock\'), getSiteChoice(\'rock\'))); checkForWin();">'+
+'    <button class="choiceButton" id="rockButton" onclick="addScore(gameResult(makeChoice(\'rock\'), getSiteChoice(\'rock\'))); checkForWin();"><img src="images/rock.jpg" class="choice"></button>'+
 '<br>' +
-'    <img src="images/paper.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'paper\'), getSiteChoice(\'paper\'))); checkForWin();">'+
+'    <button class="choiceButton" id="paperButton" onclick="addScore(gameResult(makeChoice(\'paper\'), getSiteChoice(\'paper\'))); checkForWin();"><img src="images/paper.jpg" class="choice"></button>'+
 '    <table>'+
 '        <tr>'+
 '            <td><h2>Player Score</h2></td>'+
@@ -153,7 +157,7 @@ var game = '<img src="images/computer.png" id="theCPU">'+
 '        </tr>'+
 '    </table>' +
 '<br>' +
-'    <img src="images/scissors.jpg" class="choice" onclick="addScore(gameResult(makeChoice(\'scissors\'), getSiteChoice(\'scissors\'))); checkForWin();">'
+'    <button class="choiceButton" id="scissorButton" onclick="addScore(gameResult(makeChoice(\'scissors\'), getSiteChoice(\'scissors\'))); checkForWin();"><img src="images/scissors.jpg" class="choice"></button>'
 ;
 
 var gameTable = '    <table id="finalScore">'+
@@ -195,6 +199,10 @@ function checkForWin(){
                 document.getElementById("computer").innerHTML = computerScore;
                 document.getElementById("result").innerHTML = "<button onclick='resetGame()'>Reset</button>";
             }
+        }else{
+            document.getElementById("rockButton").disabled = false;
+            document.getElementById("paperButton").disabled = false;
+            document.getElementById("scissorButton").disabled = false;
         }
     }, 1000);
 
@@ -222,3 +230,5 @@ var startMenu = '<h2>How would you like to play?</h2>'+
 ''+
 '        <input type="checkbox" id="diffCheck">'+
 '        <label for="diffCheck">Hard Mode</label>';
+
+document.getElementById("rockButton").disabled = true;
